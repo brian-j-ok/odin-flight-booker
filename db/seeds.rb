@@ -17,4 +17,6 @@ airports = Airport.create([
 flights = Flight.create([
     { departure: airports.first.id, arrival: airports.last.id, date: '2022-02-10 17:25:45', duration: 130 },
     { departure: airports.last.id, arrival: airports.first.id, date: '2022-02-15 17:25:45', duration: 130 },
+    { departure: airports.first.id, arrival: airports.last.id, date: '2022-02-15 17:25:45', duration: 130 },
+    { departure: airports.last.id, arrival: airports.first.id, date: '2022-02-10 17:25:45', duration: 130 },
 ])
