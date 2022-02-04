@@ -1,8 +1,11 @@
 class FlightsController < ApplicationController
     def index
-        puts :flight.to_s
         @airports = Airport.all.map{ |a| [a.airport_city, a.id ] }
-        @flights = Flight.where(flight_params).includes(:departure_airport, :arrival_airport)
+        if params[:flight]
+            @flights = Flight.where(flight_params).includes(:departure_airport, :arrival_airport)
+        else
+            @flights = Flight.all
+        end
     end
 
     def flight_params

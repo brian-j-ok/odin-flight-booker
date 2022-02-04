@@ -6,6 +6,7 @@
       <th scope="col">Arrival</th>
       <th scope="col">Date</th>
       <th scope="col">Time</th>
+      <th scope="col">Book</th>
     </tr>
   </thead>
 
@@ -17,6 +18,7 @@
             <td><%= flight.arrival_airport.airport_city %></td>
             <td><%= flight.date.strftime("%m/%d/%Y") %></td>
             <td><%= flight.date.strftime("%H:%M") %></td>
+            <td><%= submit_tag("Book Now") %></td>
         </tr>
     <% end %>
   </tbody>
