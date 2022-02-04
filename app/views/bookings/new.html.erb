@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Confirm Passenger Information:</a>
+</nav>
+
+<%= render 'flights/flight', flight: @flight %>
+
+<h4>Register Passengers:</h4>
+
+<%= form_with(model: @booking, local: true) do |f| %>
+  <%= f.hidden_field :flight_id, value: @flight.id %>
+  <div>
+    <%= f.fields_for :passengers do |passengers_form| %>
+      <%= passengers_form.hidden_field :id, value: nil %>
+      <h6>Passenger:</h6>
+      <div class='passenger-form-fields'>
+        <div class='input-container'>
+          <%= passengers_form.text_field :name, class: 'passenger-input no-right-border', placeholder: 'Passenger Name' %>
+        </div>
+        <div class='input-container'>
+          <%= passengers_form.text_field :email, class: 'passenger-input', placeholder: 'Passenger Email' %>
+        </div>
+      </div>
+      <br>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to 'Cancel', root_path, id: 'cancel-booking' %>
+    <ion-icon name="airplane-sharp", id='booking-airplane'></ion-icon>
+    <%= f.submit 'Book Flight', id: 'book-flight' %>
+  </div>
+<% end %>

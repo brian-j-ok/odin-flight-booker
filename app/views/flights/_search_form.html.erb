@@ -2,6 +2,7 @@
     <%= form_with(url: "/flights", method: "get", local: true) do %>
         <%= select(:flight, :departure, @airports) %>
         <%= select(:flight, :arrival, @airports) %>
+        <%= select(:flight, :tickets, 1..4, include_blank: 'Tickets') %>
         <%= submit_tag("Search") %>
     <% end %>
 </nav>

@@ -1,0 +1,23 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Booking Information:</a>
+</nav>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Booking.find(@booking.id).passengers.each do |passenger| %>
+        <tr>
+            <th scope="row"><%= passenger.id %></th>
+            <td><%= passenger.name %></td>
+            <td><%= passenger.email %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
