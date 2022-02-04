@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Departure</th>
+      <th scope="col">Arrival</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flights.each do |flight| %>
+        <tr>
+            <th scope="row"><%= flight.id %></th>
+            <td><%= flight.departure_airport.airport_city %></td>
+            <td><%= flight.arrival_airport.airport_city %></td>
+            <td><%= flight.date.strftime("%m/%d/%Y") %></td>
+            <td><%= flight.date.strftime("%H:%M") %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

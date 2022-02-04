@@ -1,8 +1,4 @@
-<h1>Flights</h1>
+<h1>FLIGHTS:</h1>
 
-
-<ul>
-    <% @flights.each do | flight | %>
-        <li><%= "Flight from #{flight.departure_airport.airport_city} to #{flight.arrival_airport.airport_city} on #{flight.date}" %></li>
-    <% end %>
-<ul>
+<%= render 'search_form' %>
+<%= render 'flights' %>
