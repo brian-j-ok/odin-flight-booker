@@ -1,6 +1,6 @@
 class FlightsController < ApplicationController
     def index
-        @airports = Airport.all.map{ |a| [a.airport_city, a.id ] }
+        @airports = Airport.all.order(:airport_city).map{ |a| [a.airport_city, a.id ] }
         if params[:flight]
             @flights = Flight.where(flight_params).includes(:departure_airport, :arrival_airport)
         else

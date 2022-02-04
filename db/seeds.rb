@@ -11,7 +11,11 @@ Flight::delete_all
 
 airports = Airport.create([
     { airport_city: 'Atlanta', airport_code: 'ATL' },
-    { airport_city: 'New York', airport_code: 'NYC' },
+    { airport_city: 'Albany', airport_code: 'ALB' },
+    { airport_city: 'Houston', airport_code: 'IAH' },
+    { airport_city: 'Austin', airport_code: 'AUS' },
+    { airport_city: 'Greensboro', airport_code: 'GSO' },
+    { airport_city: 'Miami', airport_code: 'MIA' },
 ])
 
 flights = Flight.create([
@@ -19,4 +23,5 @@ flights = Flight.create([
     { departure: airports.last.id, arrival: airports.first.id, date: '2022-02-15 17:25:45', duration: 130 },
     { departure: airports.first.id, arrival: airports.last.id, date: '2022-02-15 17:25:45', duration: 130 },
     { departure: airports.last.id, arrival: airports.first.id, date: '2022-02-10 17:25:45', duration: 130 },
+    { departure: airports[2].id, arrival: airports[3].id, date: '2022-02-10 17:25:45', duration: 130 },
 ])
