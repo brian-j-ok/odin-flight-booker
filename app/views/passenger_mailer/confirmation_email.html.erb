@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello, <%= @user.name %></h1>
+    <p>
+      You have successfully booked your flight from 
+      <%= @booking.flight.departure_airport.airport_city %> to
+      <%= @booking.flight.arrival_airport.airport_city %>
+    </p>
+    <p>
+      To check your booking information, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for flying with us and have a great day!</p>
+  </body>
+</html
